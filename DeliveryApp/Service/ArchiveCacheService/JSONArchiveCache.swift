@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class JSONArchiveCache {
-    private var fileName:String
+public class JSONArchiveCache:ArchiveCacheService {
+    var fileName:String
     private var filePath:URL?
     init() {
         fileName = "temp"

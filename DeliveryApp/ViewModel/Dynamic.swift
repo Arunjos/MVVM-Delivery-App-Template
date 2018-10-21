@@ -11,19 +11,19 @@ import Foundation
 class Dynamic<T>{
     typealias Listener = (T) -> ()
     
-    var listeners:[Listener]?
+    var listeners:[Listener] = []
     var value:T {
         didSet{
-            listeners?.forEach{
+            listeners.forEach{
                 $0(value)
             }
         }
     }
     
-    init(_ v:T) {
-        value = v
+    init(_ value:T) {
+        self.value = value
     }
     func bind(_ listener: @escaping Listener){
-        self.listeners?.append(listener)
+        self.listeners.append(listener)
     }
 }

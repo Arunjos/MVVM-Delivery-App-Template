@@ -8,14 +8,19 @@
 
 import Foundation
 
-struct DelveryDetail:Codable, Equatable {
+public struct DeliveryDetail:Codable, Equatable {
     
     var id: Int?
     var deliveryDesc: String?
     var imageURL: String?
     var location: Location?
     
-    static func == (lhs: DelveryDetail, rhs: DelveryDetail) -> Bool {
+    enum CodingKeys: String, CodingKey{
+        case deliveryDesc = "description"
+        case imageURL = "imageUrl"
+    }
+    
+    public static func == (lhs: DeliveryDetail, rhs: DeliveryDetail) -> Bool {
         if lhs.deliveryDesc == rhs.deliveryDesc && lhs.id == rhs.id && lhs.imageURL == rhs.imageURL && lhs.location == rhs.location{
             return true
         }

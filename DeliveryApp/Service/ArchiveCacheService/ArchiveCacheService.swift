@@ -16,7 +16,6 @@ public enum ArchiveError: String, Error{
 
 protocol ArchiveCacheService {
     var fileName:String{get set}
-    var filePath:String{get set}
-    func save<OBJ:Codable>(object:OBJ) throws -> (Error?)
-    func retrive<OBJ:Codable>(objectType:OBJ.Type) throws -> (OBJ?, Error?)
+    func save<OBJ:Codable>(object:OBJ) throws
+    func retrive<OBJ:Codable>(objectType:OBJ.Type) throws -> (OBJ)
 }

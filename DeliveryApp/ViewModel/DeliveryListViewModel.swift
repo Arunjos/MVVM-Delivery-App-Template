@@ -8,22 +8,18 @@
 
 import Foundation
 
-func apiController() {
+protocol DeliveryListViewModel {
+    var isOffline:Dynamic<Bool> { get }
+    var noOfDeliveries:Dynamic<Int> { get }
+    var isDeliveryDataLoading:Dynamic<Bool> { get }
+    var error:Dynamic<String> { get }
     
-    URLSessionAPIService().dispatch(apiRequest: DeliveryRequestsEndPoint.deliveryList(offset: 1, limit: 10)) { (data, response, error) in
-    if let data = data{
-    do{
-    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-    print(json)
-    }catch{
-    print(error)
-    }
-    }
-    if let response = response{
-    print(response)
-    }
-    if let error = error{
-    print(error)
-    }
-    }
+    func getCellDeliverDetail(atIndex indexpath:IndexPath) -> DeliveryDetailCellSource
+    func fetchDeliveryList()
+    func fetchMoreDeliveries()
+}
+
+struct DeliveryDetailCellSource {
+    var imageUrl:String
+    var description:String
 }

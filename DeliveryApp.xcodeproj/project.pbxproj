@@ -11,6 +11,7 @@
 		74E8E3E9C303D3B602CC8A08 /* Pods_DeliveryAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1425702785595E0C3E4D9A9 /* Pods_DeliveryAppUITests.framework */; };
 		ADE83B9324494DD7E31CFCEF /* Pods_DeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF82473AEF87BE3DB7267C /* Pods_DeliveryApp.framework */; };
 		DC5A6963216CE77500FCDB85 /* DeliveryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5A6962216CE77500FCDB85 /* DeliveryListViewModel.swift */; };
+		DCA02FBE217B9D270006A39E /* DeliveryListViewModelFromDeliverDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA02FBD217B9D270006A39E /* DeliveryListViewModelFromDeliverDetails.swift */; };
 		DCAA78F32154B3A300C93663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAA78F22154B3A300C93663 /* AppDelegate.swift */; };
 		DCAA78FA2154B3A700C93663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCAA78F92154B3A700C93663 /* Assets.xcassets */; };
 		DCAA78FD2154B3A700C93663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCAA78FB2154B3A700C93663 /* LaunchScreen.storyboard */; };
@@ -19,6 +20,8 @@
 		DCAA79212154C45100C93663 /* DeliveryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAA79202154C45100C93663 /* DeliveryListViewController.swift */; };
 		DCAA79272154D90200C93663 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAA79262154D90200C93663 /* APIService.swift */; };
 		DCCD059621749625009F6E9E /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCD059521749625009F6E9E /* Dynamic.swift */; };
+		DCCD05992179CCC3009F6E9E /* DeliveryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCD05982179CCC3009F6E9E /* DeliveryListCell.swift */; };
+		DCCD059C2179D9D4009F6E9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCD059B2179D9D4009F6E9E /* Constants.swift */; };
 		DCD92E3421565423006E14E9 /* URLSessionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E3321565423006E14E9 /* URLSessionAPIService.swift */; };
 		DCD92E3721566C3F006E14E9 /* RequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E3621566C3F006E14E9 /* RequestEndPoint.swift */; };
 		DCD92E3C21577DDD006E14E9 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E3B21577DDD006E14E9 /* ParameterEncoding.swift */; };
@@ -26,8 +29,6 @@
 		DCD92E40215804BB006E14E9 /* DeliveryRequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E3F215804BB006E14E9 /* DeliveryRequestEndPoint.swift */; };
 		DCD92E47215BF3EF006E14E9 /* DeliveryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E46215BF3EF006E14E9 /* DeliveryDetail.swift */; };
 		DCD92E49215C02DA006E14E9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E48215C02DA006E14E9 /* Location.swift */; };
-		DCD92E4E215DE710006E14E9 /* ObjectCoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E4D215DE710006E14E9 /* ObjectCoderService.swift */; };
-		DCD92E502161DFF5006E14E9 /* JSONCoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E4F2161DFF5006E14E9 /* JSONCoderService.swift */; };
 		DCD92E5621624497006E14E9 /* ArchiveCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E5521624497006E14E9 /* ArchiveCacheService.swift */; };
 		DCD92E582164870B006E14E9 /* JSONArchiveCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD92E572164870B006E14E9 /* JSONArchiveCache.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		BC26CBB28454D8200A61F4B6 /* Pods-DeliveryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.release.xcconfig"; sourceTree = "<group>"; };
 		CC06E57C8D1CA2A40073C906 /* Pods-DeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC5A6962216CE77500FCDB85 /* DeliveryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewModel.swift; sourceTree = "<group>"; };
+		DCA02FBD217B9D270006A39E /* DeliveryListViewModelFromDeliverDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewModelFromDeliverDetails.swift; sourceTree = "<group>"; };
 		DCAA78EF2154B3A300C93663 /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCAA78F22154B3A300C93663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCAA78F92154B3A700C93663 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		DCAA79202154C45100C93663 /* DeliveryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewController.swift; sourceTree = "<group>"; };
 		DCAA79262154D90200C93663 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		DCCD059521749625009F6E9E /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		DCCD05982179CCC3009F6E9E /* DeliveryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListCell.swift; sourceTree = "<group>"; };
+		DCCD059B2179D9D4009F6E9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DCD92E3321565423006E14E9 /* URLSessionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIService.swift; sourceTree = "<group>"; };
 		DCD92E3621566C3F006E14E9 /* RequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEndPoint.swift; sourceTree = "<group>"; };
 		DCD92E3B21577DDD006E14E9 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
@@ -80,8 +84,6 @@
 		DCD92E3F215804BB006E14E9 /* DeliveryRequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRequestEndPoint.swift; sourceTree = "<group>"; };
 		DCD92E46215BF3EF006E14E9 /* DeliveryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetail.swift; sourceTree = "<group>"; };
 		DCD92E48215C02DA006E14E9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		DCD92E4D215DE710006E14E9 /* ObjectCoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCoderService.swift; sourceTree = "<group>"; };
-		DCD92E4F2161DFF5006E14E9 /* JSONCoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoderService.swift; sourceTree = "<group>"; };
 		DCD92E5521624497006E14E9 /* ArchiveCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCacheService.swift; sourceTree = "<group>"; };
 		DCD92E572164870B006E14E9 /* JSONArchiveCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONArchiveCache.swift; sourceTree = "<group>"; };
 		E1425702785595E0C3E4D9A9 /* Pods_DeliveryAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 		DCAA79222154C46400C93663 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DCCD05972179CC6B009F6E9E /* Cells */,
 				DCAA79202154C45100C93663 /* DeliveryListViewController.swift */,
 			);
 			path = View;
@@ -206,6 +209,7 @@
 			children = (
 				DCD92E46215BF3EF006E14E9 /* DeliveryDetail.swift */,
 				DCD92E48215C02DA006E14E9 /* Location.swift */,
+				DCCD059B2179D9D4009F6E9E /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,8 +217,9 @@
 		DCAA79242154C47D00C93663 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DC5A6962216CE77500FCDB85 /* DeliveryListViewModel.swift */,
 				DCCD059521749625009F6E9E /* Dynamic.swift */,
+				DC5A6962216CE77500FCDB85 /* DeliveryListViewModel.swift */,
+				DCA02FBD217B9D270006A39E /* DeliveryListViewModelFromDeliverDetails.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				DCD92E5421624457006E14E9 /* ArchiveCacheService */,
-				DCD92E4A215DDD5A006E14E9 /* ObjectCoderService */,
 				DCAA79282154D90900C93663 /* APIService */,
 			);
 			path = Service;
@@ -238,6 +242,14 @@
 				DCD92E3321565423006E14E9 /* URLSessionAPIService.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		DCCD05972179CC6B009F6E9E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DCCD05982179CCC3009F6E9E /* DeliveryListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DCD92E35215654DF006E14E9 /* RequestEndpoint */ = {
@@ -256,15 +268,6 @@
 				DCD92E3D21579C70006E14E9 /* URLParameterEncoding.swift */,
 			);
 			path = Encoding;
-			sourceTree = "<group>";
-		};
-		DCD92E4A215DDD5A006E14E9 /* ObjectCoderService */ = {
-			isa = PBXGroup;
-			children = (
-				DCD92E4D215DE710006E14E9 /* ObjectCoderService.swift */,
-				DCD92E4F2161DFF5006E14E9 /* JSONCoderService.swift */,
-			);
-			path = ObjectCoderService;
 			sourceTree = "<group>";
 		};
 		DCD92E5421624457006E14E9 /* ArchiveCacheService */ = {
@@ -287,6 +290,7 @@
 				DCAA78EB2154B3A300C93663 /* Sources */,
 				DCAA78EC2154B3A300C93663 /* Frameworks */,
 				DCAA78ED2154B3A300C93663 /* Resources */,
+				3D0290CBA3F61863F7B2F7A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,6 +427,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3D0290CBA3F61863F7B2F7A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B272FDE93CF4CB3E35655A3D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,17 +497,18 @@
 				DCD92E3C21577DDD006E14E9 /* ParameterEncoding.swift in Sources */,
 				DCAA79212154C45100C93663 /* DeliveryListViewController.swift in Sources */,
 				DCD92E40215804BB006E14E9 /* DeliveryRequestEndPoint.swift in Sources */,
+				DCCD05992179CCC3009F6E9E /* DeliveryListCell.swift in Sources */,
 				DCAA79272154D90200C93663 /* APIService.swift in Sources */,
 				DCD92E5621624497006E14E9 /* ArchiveCacheService.swift in Sources */,
 				DCD92E3721566C3F006E14E9 /* RequestEndPoint.swift in Sources */,
 				DCAA78F32154B3A300C93663 /* AppDelegate.swift in Sources */,
 				DCD92E47215BF3EF006E14E9 /* DeliveryDetail.swift in Sources */,
+				DCA02FBE217B9D270006A39E /* DeliveryListViewModelFromDeliverDetails.swift in Sources */,
 				DCD92E49215C02DA006E14E9 /* Location.swift in Sources */,
-				DCD92E502161DFF5006E14E9 /* JSONCoderService.swift in Sources */,
 				DCD92E3421565423006E14E9 /* URLSessionAPIService.swift in Sources */,
 				DCCD059621749625009F6E9E /* Dynamic.swift in Sources */,
-				DCD92E4E215DE710006E14E9 /* ObjectCoderService.swift in Sources */,
 				DC5A6963216CE77500FCDB85 /* DeliveryListViewModel.swift in Sources */,
+				DCCD059C2179D9D4009F6E9E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
