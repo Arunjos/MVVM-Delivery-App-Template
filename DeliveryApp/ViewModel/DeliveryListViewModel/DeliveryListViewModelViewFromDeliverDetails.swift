@@ -9,7 +9,7 @@
 import Foundation
 import Reachability
 
-class DeliveryListViewModelFromDeliverDetails: NSObject, DeliveryListViewModel {
+class DeliveryListViewModelViewFromDeliverDetails: NSObject, DeliveryListViewModel {
     private var apiService = URLSessionAPIService()
     private var deliveryList:[DeliveryDetail] = []
     private var deliveryListDataSource:[DeliveryDetailCellSource] = []
@@ -32,6 +32,10 @@ class DeliveryListViewModelFromDeliverDetails: NSObject, DeliveryListViewModel {
     
     func getCellDeliverDetail(atIndex indexpath:IndexPath) -> DeliveryDetailCellSource{
         return deliveryListDataSource[indexpath.row]
+    }
+    
+    func getSelectedDeliverDetail(atIndex indexpath:IndexPath) -> DeliveryDetail{
+        return deliveryList[indexpath.row]
     }
     
     func fetchMoreDeliveries(){
@@ -71,7 +75,7 @@ class DeliveryListViewModelFromDeliverDetails: NSObject, DeliveryListViewModel {
     
     private func processFetchedDelieryDetail(deliveryList:[DeliveryDetail], needCache:Bool = true){
         if deliveryList.count == 0 {
-            self.error.value = "No data to load"
+            self.error.value = DeliveryListConstant.ErrorMessages.NoDataToShow
             return
         }
         self.deliveryList.append(contentsOf:deliveryList)
@@ -89,7 +93,7 @@ class DeliveryListViewModelFromDeliverDetails: NSObject, DeliveryListViewModel {
     }
     
     private func saveDeliveryDetailsToCache(){
-        jsonArchiveCahce.fileName = "DeliverList"
+        jsonArchiveCahce.fileName = DeliveryListConstant.FileName.DeliverList
         do {
             try jsonArchiveCahce.save(object: self.deliveryList)
         } catch {
@@ -98,12 +102,12 @@ class DeliveryListViewModelFromDeliverDetails: NSObject, DeliveryListViewModel {
     }
     
     private func fetchDeliveryListFromCache(){
-        jsonArchiveCahce.fileName = "DeliveryList"
+        jsonArchiveCahce.fileName = DeliveryListConstant.FileName.DeliverList
         do {
             let deliveryList = try jsonArchiveCahce.retrive(objectType: [DeliveryDetail].self)
             processFetchedDelieryDetail(deliveryList: deliveryList, needCache:false)
         } catch {
-            self.error.value = "No data to load"
+            self.error.value = DeliveryListConstant.ErrorMessages.NoDataToShow
         }
     }
 }

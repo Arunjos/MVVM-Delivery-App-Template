@@ -14,7 +14,7 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
     
     var deliveryListTableView:UITableView = UITableView()
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    var viewModel:DeliveryListViewModel = DeliveryListViewModelFromDeliverDetails()
+    var viewModel:DeliveryListViewModel = DeliveryListViewModelViewFromDeliverDetails()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,11 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: Setup Methods
     func setupView(){
-        self.navigationItem.title = DeliveryList.title
+        self.view.backgroundColor = UIColor.blue
+        
+        self.navigationItem.title = DeliveryListConstant.Title
         
         self.view.addSubview(deliveryListTableView)
         deliveryListTableView.snp.makeConstraints{(make) -> () in
@@ -37,7 +40,7 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
         }
         deliveryListTableView.dataSource = self
         deliveryListTableView.delegate = self
-        deliveryListTableView.register(DeliveryListCell.self, forCellReuseIdentifier: DeliveryList.Cell.identifier)
+        deliveryListTableView.register(DeliveryListCell.self, forCellReuseIdentifier: DeliveryListConstant.Cell.Identifier)
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(activityIndicator)
@@ -72,7 +75,7 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
         }
         viewModel.fetchDeliveryList()
     }
-    
+    //MARK: Tableview Delegates/DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.noOfDeliveries.value
     }
@@ -82,7 +85,7 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DeliveryList.Cell.identifier, for: indexPath) as! DeliveryListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DeliveryListConstant.Cell.Identifier, for: indexPath) as! DeliveryListCell
         
         let deliveryDetail = viewModel.getCellDeliverDetail(atIndex: indexPath)
         
@@ -92,6 +95,14 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let deliveryDetail = viewModel.getSelectedDeliverDetail(atIndex: indexPath)
+        let deliveryDetailViewContlr = DeliveryDetailViewController()
+        deliveryDetailViewContlr.viewModel = DeliveryDetailViewModelFromDeliverDetail(deliverDetail: deliveryDetail)
+        self.navigationController?.pushViewController(deliveryDetailViewContlr, animated: true)
+    }
+    
+    //MARK: ScrollView Delegates
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView == deliveryListTableView{
             if (scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height{

@@ -8,9 +8,21 @@
 
 import Foundation
 
-struct DeliveryList {
-    static let title = "Delivery List"
+struct DeliveryListConstant {
+    static let Title = "Things to Deliver"
     struct Cell {
-        static let identifier = "Cell"
+        static let Identifier = "Cell"
     }
+    
+    struct ErrorMessages {
+        static let NoDataToShow = "No data to show"
+    }
+    
+    struct  FileName {
+        static let DeliverList = "DeliverList"
+    }
+}
+
+struct DeliveryDetailConstant {
+    static let Title = "Delivery Details"
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 struct Location:Codable, Equatable{
-    var lat: Float?
-    var lng: Float?
+    var lat: Double?
+    var lng: Double?
     var address: String?
     
     static func == (lhs: Location, rhs: Location) -> Bool {

@@ -18,6 +18,8 @@ public struct DeliveryDetail:Codable, Equatable {
     enum CodingKeys: String, CodingKey{
         case deliveryDesc = "description"
         case imageURL = "imageUrl"
+        case id
+        case location
     }
     
     public static func == (lhs: DeliveryDetail, rhs: DeliveryDetail) -> Bool {

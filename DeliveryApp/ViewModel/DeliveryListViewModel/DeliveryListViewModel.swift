@@ -15,6 +15,7 @@ protocol DeliveryListViewModel {
     var error:Dynamic<String> { get }
     
     func getCellDeliverDetail(atIndex indexpath:IndexPath) -> DeliveryDetailCellSource
+    func getSelectedDeliverDetail(atIndex indexpath:IndexPath) -> DeliveryDetail
     func fetchDeliveryList()
     func fetchMoreDeliveries()
 }
