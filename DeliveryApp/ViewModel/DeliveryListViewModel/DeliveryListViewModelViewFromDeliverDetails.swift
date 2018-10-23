@@ -46,6 +46,14 @@ class DeliveryListViewModelViewFromDeliverDetails: NSObject, DeliveryListViewMod
         }
     }
     
+    func refreshDeliveryList(){
+        self.deliveryListApiOffset = 1
+        self.deliveryListApiLimit = 20
+        self.deliveryList = []
+        self.deliveryListDataSource = []
+        fetchDeliveryList()
+    }
+    
     func fetchDeliveryList() {
         if ((Reachability()!.connection) == .none && deliveryList.count == 0) {
             self.fetchDeliveryListFromCache()

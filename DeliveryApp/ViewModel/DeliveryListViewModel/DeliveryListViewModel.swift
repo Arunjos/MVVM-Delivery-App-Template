@@ -18,6 +18,7 @@ protocol DeliveryListViewModel {
     func getSelectedDeliverDetail(atIndex indexpath:IndexPath) -> DeliveryDetail
     func fetchDeliveryList()
     func fetchMoreDeliveries()
+    func refreshDeliveryList()
 }
 
 struct DeliveryDetailCellSource {

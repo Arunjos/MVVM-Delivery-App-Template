@@ -33,6 +33,8 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
         self.view.backgroundColor = UIColor.blue
         
         self.navigationItem.title = DeliveryListConstant.Title
+        let refreshButton = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refresh(sender:)))
+        self.navigationItem.setRightBarButton(refreshButton, animated: false)
         
         self.view.addSubview(deliveryListTableView)
         deliveryListTableView.snp.makeConstraints{(make) -> () in
@@ -75,6 +77,11 @@ class DeliveryListViewController: UIViewController, UITableViewDelegate, UITable
         }
         viewModel.fetchDeliveryList()
     }
+    
+    @objc func refresh(sender:UIBarButtonItem) {
+        viewModel.refreshDeliveryList()
+    }
+    
     //MARK: Tableview Delegates/DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.noOfDeliveries.value
